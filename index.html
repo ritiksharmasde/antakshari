@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antakshari Game</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; height: 100vh; justify-content: center; }
+        .game-container { width: 300px; text-align: center; border: 2px solid #4CAF50; border-radius: 10px; padding: 20px; box-shadow: 3px 3px 10px #888; }
+        #song-input { width: 90%; padding: 8px; margin-top: 10px; }
+        #submit-btn { margin-top: 10px; background-color: #4CAF50; color: white; border: none; padding: 8px 16px; cursor: pointer; }
+        #status { margin-top: 10px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h2>Antakshari Game</h2>
+        <p>Start your song with: <span id="start-letter">A</span></p>
+        <input type="text" id="song-input" placeholder="Enter your song...">
+        <button id="submit-btn">Submit</button>
+        <div id="status"></div>
+        <p>Player 1 Score: <span id="score">0</span></p>
+    </div>
+
+    <script>
+        let score = 0;
+        let lastLetter = 'A';
+
+        document.getElementById("submit-btn").addEventListener("click", function() {
+            const songInput = document.getElementById("song-input").value.trim();
+            if (songInput.length === 0) {
+                document.getElementById("status").textContent = "Please enter a song.";
+                return;
+            }
+
+            if (songInput[0].toUpperCase() === lastLetter) {
+                score++;
+                lastLetter = songInput[songInput.length - 1].toUpperCase();
+                document.getElementById("status").textContent = "Correct! Keep going.";
+            } else {
+                document.getElementById("status").textContent = `Wrong! The song must start with '${lastLetter}'.`;
+                score = 0;
+            }
+
+            document.getElementById("score").textContent = score;
+            document.getElementById("start-letter").textContent = lastLetter;
+            document.getElementById("song-input").value = "";
+        });
+    </script>
+</body>
+</html>
