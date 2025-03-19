@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Antakshari Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Word Antakshari Game</h1>
+
+        <div id="player-scores">
+            <h3>Player 1 Score: <span id="player1-score">0</span></h3>
+            <h3>Player 2 Score: <span id="player2-score">0</span></h3>
+        </div>
+
+        <h3 id="turn-indicator">Player 1's Turn</h3>
+
+        <input type="text" id="word-input" placeholder="Enter a word...">
+        <button onclick="playGame()">Submit Word</button>
+
+        <div id="game-result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
