@@ -1,52 +1,116 @@
+/* ✨ Fancy Background */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     display: flex;
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: #f0f8ff;
+    background: linear-gradient(135deg, #667eea, #764ba2); /* Gradient Background */
     margin: 0;
 }
 
+/* ✨ Glassmorphism Card */
 .container {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     text-align: center;
-    width: 320px;
+    width: 350px;
+    color: #fff; /* White text for contrast */
 }
 
+/* ✨ Player Scores */
 #player-scores h3 {
-    margin: 5px 0;
+    margin: 8px 0;
+    font-size: 18px;
+    font-weight: 600;
 }
 
+/* ✨ Turn Indicator */
 #turn-indicator {
     font-weight: bold;
-    color: #0078ff;
+    color: #ffcc00;
+    font-size: 18px;
     margin-top: 10px;
+    text-shadow: 0 0 5px rgba(255, 204, 0, 0.8);
 }
 
+/* ✨ Input Styling */
 #word-input {
-    width: 80%;
-    padding: 8px;
-    margin: 10px 0;
+    width: 85%;
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    transition: 0.3s;
 }
 
+#word-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#word-input:focus {
+    border-color: #ffcc00;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+}
+
+/* ✨ Modern Button */
 button {
-    background-color: #0078ff;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 25px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(255, 118, 118, 0.3);
 }
 
 button:hover {
-    background-color: #005ecb;
+    background: linear-gradient(135deg, #ff5f7e, #ff3f60);
+    box-shadow: 0 5px 20px rgba(255, 50, 50, 0.5);
+    transform: scale(1.05);
 }
 
+/* ✨ Game Result */
 #game-result {
     margin-top: 15px;
     font-weight: bold;
+    font-size: 18px;
+    color: #ffcc00;
+    text-shadow: 0 0 5px rgba(255, 204, 0, 0.8);
+}
+.timer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#timer-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #0078ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+}
+
+.critical {
+    background: red !important;
 }
